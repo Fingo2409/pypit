@@ -1,0 +1,11 @@
+[Unit]
+Description=pypit
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/pypit
+RestartSec=5
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
