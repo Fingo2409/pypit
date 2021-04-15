@@ -8,7 +8,7 @@ from _thread import *
 from datetime import datetime as dt
 
 
-def get_args():
+def get_args() -> argparse:
     parser = argparse.ArgumentParser(description="simple SSH tarpit")
 
     parser.add_argument("-p", "--port",
@@ -41,13 +41,13 @@ def get_args():
     return parser.parse_args()
 
 
-def spam(args, client_socket, address):
+def is_connected(client_socket, address):
     c_time = time.time()  # get time when client is connected
 
     try:
         while True:
             client_socket.send("fail".encode())  # test if client is still connected
-            time.sleep(args.time[0])
+            time.sleep(args.time[0])             # and sleep for x seconds
 
     except socket.error:  # client is not connected anymore
         if args.logging:
@@ -56,7 +56,7 @@ def spam(args, client_socket, address):
             logging.info(f"{now_time} [\033[1;31m-\033[0;0m] {address} connection closed after {duration} seconds.")
 
 
-def main(args):
+def main():
     if socket.has_ipv6:                     # if IPv6 is available
         server_host = "::"                  # set IPv6 host
         s = socket.socket(socket.AF_INET6)  # and IPv6 socket
@@ -75,7 +75,7 @@ def main(args):
 
     while True:
         client_socket, address = s.accept()
-        address = address[0]  # address was (IP, PORT)
+        address = address[0]  # address was (ip, port)
 
         if address.startswith("::ffff"):  # if IPv4 address
             address = address[7:]         # cut the first 7 letters
@@ -84,9 +84,9 @@ def main(args):
             now_time = dt.now().strftime('%H:%M:%S')
             logging.info(f"{now_time} [\033[1;32m+\033[0;0m] {address} is connected.")
 
-        start_new_thread(spam, (args, client_socket, address,))
+        start_new_thread(is_connected, (client_socket, address,))
 
 
 if __name__ == "__main__":
     args = get_args()
-    main(args)
+    main()
