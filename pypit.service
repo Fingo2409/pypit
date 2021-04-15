@@ -3,7 +3,7 @@ Description=pypit
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/pypit
+ExecStart=/usr/local/bin/pypit -l
 RestartSec=5
 Restart=on-failure
 
