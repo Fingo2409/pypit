@@ -41,7 +41,7 @@ def get_args() -> argparse:
     return parser.parse_args()
 
 
-def is_connected(client_socket, address):
+def is_connected(client_socket: socket, address: str):
     c_time = time.time()  # get time when client is connected
 
     try:
