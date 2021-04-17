@@ -50,9 +50,10 @@ def is_connected(client_socket: socket, address: str):
             time.sleep(args.time[0])             # and sleep for x seconds
 
     except socket.error:  # client is not connected anymore
+        now_time = dt.now().strftime('%H:%M:%S')
+        duration = round(time.time() - c_time)
+        print(f"{now_time} [\033[1;31m-\033[0;0m] {address} connection closed after {duration} seconds.")
         if args.logging:
-            now_time = dt.now().strftime('%H:%M:%S')
-            duration = round(time.time() - c_time)
             logging.info(f"{now_time} [\033[1;31m-\033[0;0m] {address} connection closed after {duration} seconds.")
 
 
@@ -72,6 +73,7 @@ def main():
         LOGFILE = "/var/log/pypit.log"
         logging.basicConfig(level=logging.DEBUG, filename=LOGFILE, filemode="a", format='%(message)s')
         logging.info(f"[*] Listening as {server_host}:{args.port[0]}")
+        print(f"[*] Listening as {server_host}:{args.port[0]}")
 
     while True:
         client_socket, address = s.accept()
@@ -80,8 +82,9 @@ def main():
         if address.startswith("::ffff"):  # if IPv4 address
             address = address[7:]         # cut the first 7 letters
 
+        now_time = dt.now().strftime('%H:%M:%S')
+        print(f"{now_time} [\033[1;32m+\033[0;0m] {address} is connected.")
         if args.logging:
-            now_time = dt.now().strftime('%H:%M:%S')
             logging.info(f"{now_time} [\033[1;32m+\033[0;0m] {address} is connected.")
 
         start_new_thread(is_connected, (client_socket, address,))

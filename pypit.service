@@ -6,6 +6,7 @@ Type=simple
 ExecStart=/usr/local/bin/pypit -l
 RestartSec=5
 Restart=on-failure
+Environment=PYTHONUNBUFFERED=1
 
 [Install]
 WantedBy=multi-user.target
