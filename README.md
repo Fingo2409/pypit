@@ -29,7 +29,7 @@ sudo ln -s /path/to/pypit.py /usr/local/bin/pypit
 sudo mv typit.service /etc/systemd/system
 ```
 
-pypit is using port 22 (ssh) to listen to connection. if you want another port change the "ExecStart" line in typit.service
+pypit is using port 22 (ssh) to listen for connections. if you want another port change the "ExecStart" line in typit.service
 
 ```
 ExecStart=/usr/local/bin/pypit -l -p <port>
