@@ -15,7 +15,7 @@ optional arguments:
 
 # installation
 
-just download the .py and .service files using wget and set chmod +x flag
+just download the .py and .service files using wget and make it executable with chmod +x
 ```
 wget https://raw.githubusercontent.com/Fingo2409/pypit/master/pypit.py
 wget https://raw.githubusercontent.com/Fingo2409/pypit/master/pypit.service
