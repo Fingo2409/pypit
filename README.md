@@ -26,7 +26,7 @@ move the pypit.service file to /etc/systemd/system and create a symlink of pypit
 
 ```
 sudo ln -s /path/to/pypit.py /usr/local/bin/pypit
-sudo mv typit.service /etc/systemd/system
+sudo mv pypit.service /etc/systemd/system
 ```
 
 pypit is using port 22 (ssh) to listen for connections. if you want another port change the "ExecStart" line in typit.service
