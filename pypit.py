@@ -42,7 +42,7 @@ def get_args() -> argparse:
 
 
 def activity(msg: str):
-    now_time = dt.now().strftime('%H:%M:%S')
+    now_time = dt.now().strftime('%Y-%m-%d_%T')
     print(f"{now_time} {msg}")
     if args.logging:
         logging.info(f"{now_time} {msg}")
