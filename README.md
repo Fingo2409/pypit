@@ -25,7 +25,7 @@ chmod +x pypit.py
 move the pypit.service file to /etc/systemd/system and create a symlink of pypit.py to /usr/local/bin
 
 ```
-sudo ln -s /path/to/pypit.py /usr/local/bin/pypit
+sudo mv pypit.py /usr/local/bin
 sudo mv pypit.service /etc/systemd/system
 ```
 
