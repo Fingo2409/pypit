@@ -53,7 +53,6 @@ tail -f /var/log/pypit.log
 2021-08-03_12:31:22 [+] 77.132.xx.xx is connected.
 2021-08-03_12:32:23 [+] 218.92.x.xxx is connected.
 2021-08-03_12:32:38 [-] 218.92.x.xxx connection closed after 15 seconds.
-2021-08-03_12:32:52 [-] 218.92.x.xxx connection closed after 696 seconds.
 2021-08-03_12:36:42 [-] 77.132.xx.xx connection closed after 320 seconds.
 2021-08-03_12:36:43 [+] 77.132.xx.xx is connected.
 2021-08-03_12:42:03 [-] 77.132.xx.xx connection closed after 320 seconds.
