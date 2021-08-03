@@ -48,16 +48,16 @@ that's all. now have a look at the log.
 tail -f /var/log/pypit.log
 
 [*] Listening as :::22
-12:57:54 [+] 45.141.xx.xx is connected.
-12:57:58 [+] 186.3.xxx.xxx is connected.
-12:57:58 [+] 58.186.xx.xxx is connected.
-12:57:59 [+] 79.98.xxx.x is connected.
-13:01:34 [+] 61.177.xxx.xx is connected.
-13:01:54 [-] 61.177.xxx.xx connection closed after 20 seconds.
-13:03:18 [-] 186.3.xxx.xxx connection closed after 320 seconds.
-13:03:18 [-] 58.186.xx.xxx connection closed after 320 seconds.
-13:03:19 [-] 79.98.xxx.x connection closed after 320 seconds.
-13:03:20 [+] 186.3.xxx.xxx is connected.
-13:03:20 [+] 58.186.xx.xxx is connected.
-13:03:21 [+] 79.98.xxx.xx is connected.
+2021-08-03_12:25:29 [+] 77.132.xx.xx is connected.
+2021-08-03_12:31:20 [-] 77.132.xx.xx connection closed after 350 seconds.
+2021-08-03_12:31:22 [+] 77.132.xx.xx is connected.
+2021-08-03_12:32:23 [+] 218.92.x.xxx is connected.
+2021-08-03_12:32:38 [-] 218.92.x.xxx connection closed after 15 seconds.
+2021-08-03_12:32:52 [-] 218.92.x.xxx connection closed after 696 seconds.
+2021-08-03_12:36:42 [-] 77.132.xx.xx connection closed after 320 seconds.
+2021-08-03_12:36:43 [+] 77.132.xx.xx is connected.
+2021-08-03_12:42:03 [-] 77.132.xx.xx connection closed after 320 seconds.
+2021-08-03_12:42:04 [+] 77.132.xx.xx is connected.
+2021-08-03_12:44:15 [+] 205.185.xxx.xxx is connected.
+2021-08-03_12:44:25 [-] 205.185.xxx.xxx connection closed after 10 seconds.
 ```
