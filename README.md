@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/Fingo2409/pypit/master/pypit.service
 chmod +x pypit.py
 ```
 
-move the pypit.service file to /etc/systemd/system and create a symlink of pypit.py to /usr/local/bin
+move the pypit.service file to /etc/systemd/system and pypit.py to /usr/local/bin
 
 ```
 sudo mv pypit.py /usr/local/bin
