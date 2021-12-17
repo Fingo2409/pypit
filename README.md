@@ -32,7 +32,7 @@ sudo mv pypit.service /etc/systemd/system
 pypit is using port 22 (ssh) to listen for connections. if you want another port change the "ExecStart" line in pypit.service
 
 ```
-ExecStart=/usr/local/bin/pypit -l -p <port>
+ExecStart=/usr/local/bin/pypit.py -l -p <port>
 ```
 
 if everything is done you can start the service and enable it for automatic start
